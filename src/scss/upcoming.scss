@@ -1,0 +1,28 @@
+.upcoming {
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    &__movie{
+        scroll-snap-stop: normal;
+        margin: 0 15px 25px 0;
+        scroll-snap-align: start;
+        border-radius: 30px;
+        min-width: 200px;
+        min-height: 330px;
+    }
+    &__title {
+        width: 200px;
+    }
+    &::-webkit-scrollbar {
+        background: grey;
+        height: 15px;
+        border-radius: 8px;
+        &-thumb {
+            background-color: white;
+            border-radius: 8px;
+        }
+    }
+}

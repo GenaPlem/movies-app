@@ -1,0 +1,10 @@
+.popular {
+    display: flex;
+    flex-wrap: wrap;
+    &__movie {
+        margin: 0 15px 25px 0;
+    }
+    &__title {
+        width: 200px;
+    }
+}
