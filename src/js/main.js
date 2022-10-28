@@ -4,7 +4,6 @@ const getData = (request, selector) => {
     const url = 'https://api.themoviedb.org/3';
     return fetch(`${url}${request}?api_key=${API_KEY}`)
     .then(res => res.json())
-    .then(data => renderMovies(data, selector))
     
 }
 
@@ -18,11 +17,14 @@ const renderMovies = (data, selector) => {
     </div>`
     )).join('');
 
-    document.querySelector('.'+selector).innerHTML += res;
+    document.querySelector('.'+selector).innerHTML += res
     }
 
-getData('/movie/popular', 'popular')
+getData('/movie/popular')
+.then(data => renderMovies(data, 'popular'))
 
-getData('/movie/top_rated', 'top_rated')
+getData('/movie/top_rated')
+.then(data => renderMovies(data, 'top_rated'))
 
-getData('/movie/upcoming', 'upcoming')
+getData('/movie/upcoming')
+.then(data => renderMovies(data, 'upcoming'))
