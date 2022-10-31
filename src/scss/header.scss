@@ -1,13 +1,12 @@
 .header {
-    position:relative;
-    text-align:center;
-    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-}  
-.waves {
-    position:relative;
-    width: 100%;
-    height:15vh;
-    margin-bottom:-7px; /*Fix for safari gap*/
-    min-height:100px;
-    max-height:150px;
-  }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    &__wrapper {
+        background-color: #031d33;
+        color: white;
+    }
+    &__search {
+        margin-right: 100px;
+    }
+}

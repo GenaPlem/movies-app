@@ -8,11 +8,11 @@ const getData = (request, selector) => {
 }
 
 const renderMovies = (data, selector) => {
-    let res = data.results.map(({ poster_path, original_title, popularity, release_date}) => (
+    let res = data.results.map(({ poster_path, original_title, vote_average, release_date}) => (
     `<div class="${selector}__movie">
         <img src="https://image.tmdb.org/t/p/w200/${poster_path}" alt="${original_title}>"<br>
         <div class="${selector}__title">${original_title}</div>
-        <span class="${selector}__rate">${popularity}</span>
+        <div class="${selector}__rate">${vote_average*10}%</div>
         <div class="${selector}__date">${formateDate(release_date)}</div>
     </div>`
     )).join('');
@@ -27,7 +27,6 @@ const formateDate = (date) => {
     }).replace(/ /g, '-');
     
 }
-
 
 getData('/movie/popular')
 .then(data => renderMovies(data, 'popular'))
