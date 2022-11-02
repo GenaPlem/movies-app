@@ -1,0 +1,9 @@
+.footer {
+    background-color: #031d33;
+    color: white;
+    margin-top: 10px;
+    &__info {
+        display: inline-block;
+        margin: 50px 0;
+    }
+}

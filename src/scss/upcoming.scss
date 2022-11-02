@@ -1,0 +1,41 @@
+.upcoming {
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    &__movie{
+        scroll-snap-stop: normal;
+        margin: 0 15px 25px 0;
+        scroll-snap-align: start;
+        border-radius: 30px;
+        min-width: 200px;
+        min-height: 330px;
+        position: relative;
+    }
+    &__title {
+        width: 200px;
+    }
+    &__rate {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        background-color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &::-webkit-scrollbar {
+        background: rgb(172, 146, 146);
+        height: 15px;
+        border-radius: 8px;
+        &-thumb {
+            background-color: grey;
+            border-radius: 8px;
+        }
+    }
+}
