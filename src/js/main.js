@@ -1,8 +1,8 @@
-export const {API_KEY} = process.env;
-import { getData } from "./api";
+import { checkUrl } from "./utils";
 
-getData('/movie/popular', 'popular')
+checkUrl()
 
-getData('/movie/top_rated', 'top_rated')
+window.addEventListener('hashchange', (e) => {
+    checkUrl()
+})
 
-getData('/movie/upcoming', 'upcoming')

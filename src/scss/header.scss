@@ -3,8 +3,8 @@
         justify-content: space-between;
         align-items: center;
     &__wrapper {
-        background-color: #031d33;
-        color: white;
+        background-color: $dark_blue;
+        color: $white;
     }
     &__search {
         margin-right: 100px;
