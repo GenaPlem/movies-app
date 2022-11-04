@@ -1,5 +1,5 @@
-import { generateApiUrl } from "./utils";
-import { renderMovies, renderMovieDetails, renderError } from "./templates";
+import { generateApiUrl, generateSearchUrl } from "./utils";
+import { renderMovies, renderMovieDetails, renderError, renderSearchMovies } from "./templates";
 
 export const getMovies = (path) => {
     return fetch(generateApiUrl(path))
@@ -28,3 +28,14 @@ export const getMovieDetails = (path) => {
         }
     })
 } 
+
+export const getSearchMovies = (search) => {
+    return fetch(generateSearchUrl(search))
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        const root = document.querySelector('#root')
+
+        root.innerHTML = renderSearchMovies(data.results, search)
+    })
+}

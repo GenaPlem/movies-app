@@ -13,7 +13,7 @@
   }
   
   .container {
-    max-width: 1360px;
+    max-width: 1320px;
     min-width: 375px;
     margin: 0 auto;
     padding: 0 20px;
@@ -22,4 +22,5 @@
   a {
     outline: none;
     text-decoration: none;
+    color: $black;
   }

@@ -1,4 +1,9 @@
 .header {
+    &__logo {
+        font-size: 32px;
+        color: $white;
+        margin: 22px 0;
+    }
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -7,6 +12,15 @@
         color: $white;
     }
     &__search {
-        margin-right: 100px;
+        &-input {
+            border: none;
+            border-radius: 10px;
+        }
+        &-submit {
+            border: none;
+            background-color: inherit;
+            color: $white;
+            cursor: pointer;
+        }
     }
 }

@@ -1,9 +1,12 @@
-.top_rated {
+.search {
     display: flex;
     flex-wrap: wrap;
-    &__movie{
+    &__movie {
         margin: 0 13.3px 25px 0;
         position: relative;
+    }
+    &__title {
+        width: 200px;
     }
     &__rate {
         position: absolute;
@@ -16,8 +19,5 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    &__title {
-        width: 200px;
     }
 }
