@@ -1,8 +1,20 @@
-export const {API_KEY} = process.env;
-import { getData } from "./api";
+import { getSearchMovies } from "./api";
+import { checkUrl } from "./utils";
 
-getData('/movie/popular', 'popular')
+checkUrl()
 
-getData('/movie/top_rated', 'top_rated')
+window.addEventListener('hashchange', (e) => {
+    checkUrl()
+})
 
-getData('/movie/upcoming', 'upcoming')
+const submit = document.querySelector('.header__search-submit');
+submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    let query = document.querySelector('[name="query"]')
+    if (query.value) {
+        window.location.hash = `query=${query.value}`
+        getSearchMovies(query)
+        checkUrl()
+        query.value ='';
+    }
+})
